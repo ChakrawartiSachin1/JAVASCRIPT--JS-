@@ -1,0 +1,183 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## `Creating Objects`"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "1) ##### Object Literals\n\n\nThe most common way to create an object is by using an object literal. This involves defining an object with curly braces `{}` and specifying key-value pairs.\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const love = {\n      name: 'Shraddhu',\n      age: 37,\n      love_for_her: 'uncontable',\n\n      \n\n};\n\nconsole.log(love);\nconsole.log(\" love \" +love.name); // accessing the object property\nconsole.log(love.age); // accessing the object property\nconsole.log(love.love_for_her); // accessing the object property\n\n\n\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ name: 'Shraddhu', age: 37, love_for_her: 'uncontable' }",
+                                " love Shraddhu",
+                                "37",
+                                "uncontable",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "2) ##### Using the new Object( ) Syntax\n\nYou can also create an object using the Object constructor. This is less common but can be useful in certain situations.\n\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const love = new Object();\nlove.name = 'Priyal';\nlove.age = 23;\nlove.love_for_her = \"uncontable less than shraddhu\";\n\n\nconsole.log(love);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{",
+                                "  name: 'Priyal',",
+                                "  age: 23,",
+                                "  love_for_her: 'uncontable less than shraddhu'",
+                                "}",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "3) ##### Factory Function \n\n-> Factory functions are functions that return a new object each time they are called. They allow you to create multiple objects with similar structures."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function createPerson(firstName, lastName, age) {\n    return {\n      firstName: firstName,\n      lastName: lastName,\n      age: age\n    };\n  }\n  \n  const person1 = createPerson('Jane', 'Doe', 28);\n  const person2 = createPerson('John', 'Smith', 35);\n\n\n  console.log(person1);\n  console.log(person2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ firstName: 'Jane', lastName: 'Doe', age: 28 }",
+                                "{ firstName: 'John', lastName: 'Smith', age: 35 }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "4)  ##### Constructor Functions\n\nConstructor functions are special functions used to create objects. They are called with the new keyword"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function Person(firstName, lastName, age) {\n    this.firstName = firstName;\n    this.lastName = lastName;\n    this.age = age;\n  }\n  \n  const person1 = new Person('Jane', 'Doe', 28);\n  const person2 = new Person('John', 'Smith', 35);\n\n  \n  console.log(person1);\n  console.log(person2);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Person { firstName: 'Jane', lastName: 'Doe', age: 28 }",
+                                "Person { firstName: 'John', lastName: 'Smith', age: 35 }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "5) ##### ES6 Classes\n\n\nES6 introduced class syntax as a more modern way to create objects and handle inheritance."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "class Person {\n    constructor(firstName, lastName, age) {\n      this.firstName = firstName;\n      this.lastName = lastName;\n      this.age = age;\n    }\n  }\n  \n  const person1 = new Person('Jane', 'Doe', 28);\n  const person2 = new Person('John', 'Smith', 35);\n\n  console.log(person1);\n  console.log(person2);\n  "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Person { firstName: 'Jane', lastName: 'Doe', age: 28 }",
+                                "Person { firstName: 'John', lastName: 'Smith', age: 35 }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "6) ##### Object.create()\n\nThe Object.create() method creates a new object with the specified prototype object and properties.\n\nExample:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const personPrototype = {\n    greet: function() {\n      console.log(`Hello, my name is ${this.firstName} ${this.lastName}.`);\n    }\n  };\n  \n  const person1 = Object.create(personPrototype);\n  person1.firstName = 'Jane';\n  person1.lastName = 'Doe';\n  person1.age = 28;\n  \n  person1.greet(); // Hello, my name is Jane Doe.\n  "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello, my name is Jane Doe.",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

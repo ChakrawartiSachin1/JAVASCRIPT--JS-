@@ -1,0 +1,37 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Mapping to an Object"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const numbers = [1, 2, 3, 4, 5];\n\nconst objects = numbers.map(num => ({\n    value: num,\n    square: num * num\n}));\n\n\nconsole.log(objects);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  { value: 1, square: 1 },",
+                                "  { value: 2, square: 4 },",
+                                "  { value: 3, square: 9 },",
+                                "  { value: 4, square: 16 },",
+                                "  { value: 5, square: 25 }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

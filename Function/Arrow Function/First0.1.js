@@ -1,5 +1,5 @@
 const Devotion = () => {
-    console.log("I love you priyal");
+    console.log("I love you Shraddhu");
 };
 
 Devotion();

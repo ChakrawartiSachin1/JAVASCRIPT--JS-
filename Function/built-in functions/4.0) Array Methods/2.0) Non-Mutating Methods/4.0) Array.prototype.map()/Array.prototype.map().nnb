@@ -1,0 +1,86 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Array.prototype.map()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "`Array.prototype.map() `is a method that creates a new array with the results of calling a provided function on every element in the calling array. It does not modify the original array."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Syntax:\n\n\n<span style=\"color: red;\">array.map</span>(<span style=\"color: red;\">callback</span>(currentValue[, index[, array]])[, thisArg])\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Parameters:\n\n+ `callback`: A function that will be called for every element in the array. It takes up to three arguments:\n\n+ `currentValue`: The current element being processed in the array.\n+ `index (optional)`: The index of the current element being processed.\n+ `array (optional)`: The array that map was called upon.\n+ `thisArg (optional)`: Value to use as this when executing the callback function.\n\n#### Returns:\n\n+ A new array with each element being the result of the callback function"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "+ Example 1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const numbers = [1, 2, 3, 4, 5];\n\nconst doubled = numbers.map(number => number * 2);\n\nconsole.log(doubled); // [2, 4, 6, 8, 10]\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 2, 4, 6, 8, 10 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const numbers = [6, 7, 8, 9, 10];\n\nconst multi = numbers.map(number => number * 6);\n\nconsole.log(multi);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 36, 42, 48, 54, 60 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
